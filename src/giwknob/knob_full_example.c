@@ -132,12 +132,12 @@ int main (int argc, char *argv[])
   
 	gtk_window_set_title (GTK_WINDOW (window), "GiwKnob Full Example");
   
-	g_signal_connect (GTK_OBJECT (window), "destroy", G_CALLBACK (gtk_main_quit), NULL);
+	g_signal_connect (G_OBJECT (window), "destroy", G_CALLBACK (gtk_main_quit), NULL);
   
-	gtk_container_border_width (GTK_CONTAINER (window), 10);
+	gtk_container_set_border_width (GTK_CONTAINER (window), 10);
 
 	// Table with for cells to hold the four frames
-	grid1=gtk_grid_new(2, 2, FALSE);
+	grid1=gtk_grid_new();
 	gtk_container_add(GTK_CONTAINER(window), grid1);
 	gtk_widget_show(grid1);
   
@@ -146,7 +146,7 @@ int main (int argc, char *argv[])
 	gtk_grid_attach(GTK_GRID(grid1), frame_knob, 0, 0, 1, 1);
 	gtk_widget_show(frame_knob);
 	
-	vbox_knob=gtk_vbox_new(FALSE, 0);
+	vbox_knob=gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
 	gtk_container_add(GTK_CONTAINER(frame_knob), vbox_knob);
 	gtk_widget_show(vbox_knob);
 	
@@ -164,7 +164,7 @@ int main (int argc, char *argv[])
 	gtk_grid_attach(GTK_GRID(grid1), frame_configure, 0, 1, 1, 1);
 	gtk_widget_show(frame_configure);
 	
-	table_configure=gtk_grid_new(3, 2, FALSE);
+	table_configure=gtk_grid_new();
 	gtk_container_add(GTK_CONTAINER(frame_configure), table_configure);
 	gtk_widget_show(table_configure);
   
@@ -197,7 +197,7 @@ int main (int argc, char *argv[])
 	gtk_grid_attach(GTK_GRID(grid1), frame_adj, 1, 0, 1, 1);
 	gtk_widget_show(frame_adj);
 	
-	grid_adj=gtk_grid_new(4, 2, FALSE);
+	grid_adj=gtk_grid_new();
 	gtk_container_add(GTK_CONTAINER(frame_adj), grid_adj);
 	gtk_widget_show(grid_adj);
 		
@@ -235,7 +235,7 @@ int main (int argc, char *argv[])
 	gtk_grid_attach(GTK_GRID(grid1), frame_mouse, 1, 1, 1, 1);
 	gtk_widget_show(frame_mouse);
 	
-	vbox_mouse=gtk_vbox_new(FALSE, 0);
+	vbox_mouse=gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
 	gtk_container_add(GTK_CONTAINER(frame_mouse), vbox_mouse);
 	gtk_widget_show(vbox_mouse);
 
