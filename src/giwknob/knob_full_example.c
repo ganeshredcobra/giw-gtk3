@@ -143,7 +143,7 @@ int main (int argc, char *argv[])
   
 	// The frame with the knob and the spin with his value
 	frame_knob=gtk_frame_new("Knob:");
-	gtk_grid_attach(GTK_GRID(grid1), frame_knob, 0, 1, 0, 1, GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid1), frame_knob, 0, 0, 1, 1);
 	gtk_widget_show(frame_knob);
 	
 	vbox_knob=gtk_vbox_new(FALSE, 0);
@@ -161,7 +161,7 @@ int main (int argc, char *argv[])
 		
 	// The frame with the spin to set the ticks and legends digits number
 	frame_configure=gtk_frame_new("Configure:");
-	gtk_grid_attach(GTK_GRID(grid1), frame_configure, 0, 1, 1, 2, GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid1), frame_configure, 0, 1, 1, 1);
 	gtk_widget_show(frame_configure);
 	
 	table_configure=gtk_grid_new(3, 2, FALSE);
@@ -169,32 +169,32 @@ int main (int argc, char *argv[])
 	gtk_widget_show(table_configure);
   
 	label_minor=gtk_label_new("Minor Ticks:");
-	gtk_grid_attach(GTK_GRID(table_configure), label_minor, 0, 1, 0, 1, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(table_configure), label_minor, 0, 0, 1, 1);
 	gtk_widget_show (label_minor);
   
 	spin_minor = gtk_spin_button_new_with_range(0, 50, 1);
-	gtk_grid_attach(GTK_GRID(table_configure), spin_minor, 1, 2, 0, 1, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(table_configure), spin_minor, 1, 0, 1, 1);
 	gtk_widget_show (spin_minor);
   
 	label_major=gtk_label_new("Major Ticks:");
-	gtk_grid_attach(GTK_GRID(table_configure), label_major, 0, 1, 1, 2, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(table_configure), label_major, 0, 1, 1, 1);
 	gtk_widget_show (label_major);
   
 	spin_major = gtk_spin_button_new_with_range(0, 50, 1);
-	gtk_grid_attach(GTK_GRID(table_configure), spin_major, 1, 2, 1, 2, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(table_configure), spin_major, 1, 1, 1, 1);
 	gtk_widget_show (spin_major);
 	
 	label_digits=gtk_label_new("Legends Digits:");
-	gtk_grid_attach(GTK_GRID(table_configure), label_digits, 0, 1, 2, 3, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(table_configure), label_digits, 0, 2, 1, 1);
 	gtk_widget_show (label_digits);
   
 	spin_digits = gtk_spin_button_new_with_range(0, 50, 1);
-	gtk_grid_attach(GTK_GRID(table_configure), spin_digits, 1, 2, 2, 3, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(table_configure), spin_digits, 1, 2, 1, 1);
 	gtk_widget_show (spin_digits);
 
 	// Frame with the labels and spins that will set a new adjusment (range) for the knob	
 	frame_adj=gtk_frame_new("New adjustment:");
-	gtk_grid_attach(GTK_GRID(grid1), frame_adj, 1, 2, 0, 1, GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid1), frame_adj, 1, 0, 1, 1);
 	gtk_widget_show(frame_adj);
 	
 	grid_adj=gtk_grid_new(4, 2, FALSE);
@@ -202,37 +202,37 @@ int main (int argc, char *argv[])
 	gtk_widget_show(grid_adj);
 		
 	label_adj_value = gtk_label_new("Value:");
-	gtk_grid_attach(GTK_GRID(grid_adj), label_adj_value, 0, 1, 0, 1, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), label_adj_value, 0, 0, 1, 1);
 	gtk_widget_show (label_adj_value);
   
 	spin_adj_value = gtk_spin_button_new_with_range(-1000000, 1000000, 1);
-	gtk_grid_attach(GTK_GRID(grid_adj), spin_adj_value, 1, 2, 0, 1, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), spin_adj_value, 1, 0, 1, 1);
 	gtk_widget_show (spin_adj_value);
   
 	label_adj_lower = gtk_label_new("Lower:");
-	gtk_grid_attach(GTK_GRID(grid_adj), label_adj_lower, 0, 1, 1, 2, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), label_adj_lower, 0, 1, 1, 1);
 	gtk_widget_show (label_adj_lower);
   
 	spin_adj_lower = gtk_spin_button_new_with_range(-1000000, 1000000, 1);
-	gtk_grid_attach(GTK_GRID(grid_adj), spin_adj_lower, 1, 2, 1, 2, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), spin_adj_lower, 1, 1, 1, 1);
 	gtk_widget_show (spin_adj_lower);
   
 	label_adj_upper = gtk_label_new("Upper:");
-	gtk_grid_attach(GTK_GRID(grid_adj), label_adj_upper, 0, 1, 2, 3, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), label_adj_upper, 0, 2, 1, 1);
 	gtk_widget_show (label_adj_upper);
   
 	spin_adj_upper = gtk_spin_button_new_with_range(-1000000, 1000000, 1);
-	gtk_grid_attach(GTK_GRID(grid_adj), spin_adj_upper, 1, 2, 2, 3, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), spin_adj_upper, 1, 2, 1, 1);
 	gtk_widget_show (spin_adj_upper);
 
 	// The button, that, if pressed, will set the new adjusment
 	button_set_adj = gtk_button_new_with_label("Set adjustment");
-	gtk_grid_attach(GTK_GRID(grid_adj), button_set_adj, 0, 2, 3, 4, GTK_EXPAND, GTK_EXPAND, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid_adj), button_set_adj, 0, 3, 2, 1);
 	gtk_widget_show (button_set_adj);
 	
 	// Frame with the mouse options (radio buttons)
 	frame_mouse=gtk_frame_new("Mouse policy:");
-	gtk_grid_attach(GTK_GRID(grid1), frame_mouse, 1, 2, 1, 2, GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);
+	gtk_grid_attach(GTK_GRID(grid1), frame_mouse, 1, 1, 1, 1);
 	gtk_widget_show(frame_mouse);
 	
 	vbox_mouse=gtk_vbox_new(FALSE, 0);
