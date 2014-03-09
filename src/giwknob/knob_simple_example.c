@@ -33,7 +33,7 @@ char str[20];
 void adjustment_value_changed(GtkAdjustment *adjustment, gpointer user_data)
 {
 	// Creating the string
-	sprintf(str, "Value : %f", gtk_adjustment_get_value(adjustment)); 
+	g_snprintf(str, 20, "Value : %f", gtk_adjustment_get_value(adjustment)); 
 	
 	// Now, changing the text of the label
 	gtk_label_set_text(GTK_LABEL(label), str); 
