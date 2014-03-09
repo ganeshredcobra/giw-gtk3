@@ -5,11 +5,11 @@ LDLIBS=`pkg-config --libs $(PKGS)` -lm
 
 CFILES_LIB=$(shell find . -iname 'giw*.c')
 CFILES_EXAMPLES=$(shell find . -iname '*example.c')
-EXAMPLES=$(patsubst %.c, %, $(CFILES_EXAMPLES))
+EXAMPLES_BIN=$(patsubst %.c, %, $(CFILES_EXAMPLES))
 
 OBJ=$(patsubst %.c, %.o, $(CFILES_LIB) $(CFILES_EXAMPLES))
 
-all: $(EXAMPLES)
+all: $(EXAMPLES_BIN)
 
 define make-examples
 $1: $1.o $2
@@ -20,4 +20,4 @@ endef
 $(foreach i, $(CFILES_EXAMPLES), $(eval $(call make-examples, $(basename $i), $(patsubst %.c, %.o, $(wildcard $(dir $i)giw*.c)))))
 
 clean:
-	rm -f $(OBJ) $(EXAMPLES)
+	rm -f $(OBJ) $(EXAMPLES_BIN)
