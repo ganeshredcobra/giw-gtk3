@@ -1,5 +1,5 @@
 PKGS=gtk+-3.0 glib-2.0 gmodule-2.0 
-CFLAGS=-g3 `pkg-config --cflags $(PKGS)`
+CFLAGS=-g3 `pkg-config --cflags $(PKGS)` -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
 CC=gcc
 LDLIBS=`pkg-config --libs $(PKGS)` -lm
 
