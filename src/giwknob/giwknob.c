@@ -1027,7 +1027,7 @@ knob_build_legends (GiwKnob * knob)
         str = g_new (gchar, knob->legends_digits + 1);  // +1 for the '/0'
         for (loop = 0; loop < knob->major_ticks; loop++) {
 
-            snprintf (str, knob->legends_digits + 1, "%f", gtk_adjustment_get_lower (knob->adjustment) + loop * (gtk_adjustment_get_upper (knob->adjustment) - gtk_adjustment_get_lower (knob->adjustment)) / (knob->major_ticks - 1)); // Creating the legends string
+            g_snprintf (str, knob->legends_digits + 1, "%f", gtk_adjustment_get_lower (knob->adjustment) + loop * (gtk_adjustment_get_upper (knob->adjustment) - gtk_adjustment_get_lower (knob->adjustment)) / (knob->major_ticks - 1)); // Creating the legends string
 
             knob->legends[loop] =
                 gtk_widget_create_pango_layout (widget, str);
