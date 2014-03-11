@@ -25,10 +25,6 @@ James Scott Jr <skoona@users.sourceforge.net>
 #ifndef __GIW_KNOB_H__
 #define __GIW_KNOB_H__
 
-#include <gdk/gdk.h>
-#include <gtk/gtkadjustment.h>
-#include <gtk/gtkwidget.h>
-
 G_BEGIN_DECLS
 
 #define GIW_TYPE_KNOB                 (giw_knob_get_type ())
