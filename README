@@ -1,0 +1,14 @@
+TEST GLADE SUPPORT OF KNOB WIDGET
+---------------------------------
+
+Prerequisites: everything was compiled previously
+
+Goto the root directory of the package and start glade
+with
+
+    $ GLADE_CATALOG_SEARCH_PATH=glade GLADE_MODULE_SEARCH_PATH=src/giwknob glade
+
+If you want to compile the sources of a program, that loads
+the ui definition file, you must add the path of the 
+shared library to LD_LIBRARY_PATH or copy it to a default
+search path.
