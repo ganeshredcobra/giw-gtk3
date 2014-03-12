@@ -269,7 +269,11 @@ giw_knob_realize (GtkWidget * widget)
     gtk_widget_set_window (widget, window);
     g_object_ref (window);
 
+#if ((GTK_MAJOR_VERSION == 3) && (GTK_MINOR_VERSION < 8))
+    gdk_window_set_user_data (window, widget);
+#else
     gtk_widget_register_window (widget, window);
+#endif
 
     // Create the initial legends
     knob_build_legends (knob);
